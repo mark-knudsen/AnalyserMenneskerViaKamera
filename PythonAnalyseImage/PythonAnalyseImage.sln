@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "WebCamSender", "ComputerWebCamSender\WebCamSender.pyproj", "{1B52327C-CEAA-41ED-AF5E-6415A550383E}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "WebCamReciever", "ComputerReciever\WebCamReciever.pyproj", "{B838A9C7-AB29-475D-BAC6-A484D4010BB7}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "VideoDetectHumanTest", "VideoDetectHumanTest\VideoDetectHumanTest.pyproj", "{C1877772-2092-4BBD-9EBA-A219F0F15D5D}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "DetectHumanTest", "CameraDetectHumanTest\DetectHumanTest.pyproj", "{9C5A4922-667F-4AC9-A750-925E91990CB1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1B52327C-CEAA-41ED-AF5E-6415A550383E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B52327C-CEAA-41ED-AF5E-6415A550383E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B838A9C7-AB29-475D-BAC6-A484D4010BB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B838A9C7-AB29-475D-BAC6-A484D4010BB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1877772-2092-4BBD-9EBA-A219F0F15D5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1877772-2092-4BBD-9EBA-A219F0F15D5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C5A4922-667F-4AC9-A750-925E91990CB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C5A4922-667F-4AC9-A750-925E91990CB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {164022D1-8D13-47A0-8551-DC94D8BE725D}
+	EndGlobalSection
+EndGlobal
