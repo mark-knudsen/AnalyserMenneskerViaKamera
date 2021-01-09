@@ -1,5 +1,5 @@
 # Dette script kommer fra geeksforgeeks.org, og jeg har brugt dette script 
-# til at fforstå bedre hvordan man analysere billeder via OpenCV.
+# til at forstå bedre hvordan man analysere billeder via OpenCV.
 
 import cv2, imutils
 
@@ -13,12 +13,26 @@ hog.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
 video = 'C:/Users/Mark/Documents/datamatiker/TrainStation.mp4'
 cap = cv2.VideoCapture(video)
 
+def detect(frame):
+    bounding_box_cordinates, weights =  hog.detectMultiScale(frame, winStride = (1, 1), padding = (8, 8), scale = 2.03)
+    
+    person = 1
+    for x,y,w,h in bounding_box_cordinates:
+        cv2.rectangle(frame, (x,y), (x+w,y+h), (0,255,0), 2)
+        cv2.putText(frame, f'person {person}', (x,y), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0,0,255), 1)
+        person += 1
+    
+    cv2.putText(frame, 'Status : Detecting ', (40,40), cv2.FONT_HERSHEY_DUPLEX, 0.5, (0,129,255), 2)
+    cv2.putText(frame, f'Total Persons : {person-1}', (40,70), cv2.FONT_HERSHEY_DUPLEX, 0.5, (0,129,255), 2)
+    cv2.imshow('output', frame)
+    return frame
+
 while cap.isOpened(): 
     # Reading the video stream 
     ret, image = cap.read() 
     if ret: 
-        image = imutils.resize(image,  
-                               width=min(400, image.shape[1]))    
+        image = imutils.resize(image, width=min(1200, image.shape[1]))  
+        image = detect(image)  #
         # Detecting all the regions  
         # in the Image that has a  
         # pedestrians inside it 
