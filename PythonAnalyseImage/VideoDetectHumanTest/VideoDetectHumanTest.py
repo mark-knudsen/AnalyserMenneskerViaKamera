@@ -1,5 +1,8 @@
-# Dette script udarbejdet ud fra guide man kan finde på nedenstående adresse:
+# Dette script er udarbejdet ud fra guiden man kan finde på nedenstående adresse:
 # 'https://data-flair.training/blogs/python-project-real-time-human-detection-counting/'
+# , samt fra en guide fra 'https://www.geeksforgeeks.org/pedestrian-detection-using-opencv-python/'
+# Jeg har sammenkoblet koderne fra disse to steder.
+
 
 # import the necessary packages
 from __future__ import print_function
@@ -99,27 +102,24 @@ def detectByCamera(writer):
     cv2.destroyAllWindows()
 def detectByPathImage(path, output_path):
     image = cv2.imread(path)
-    image = imutils.resize(image, width = min(800, image.shape[1])) 
+    image = imutils.resize(image, width = min(600, image.shape[1])) 
     result_image = detect(image)
     if output_path is not None:
         cv2.imwrite(output_path, result_image)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
-       
+
 while webcam.isOpened(): 
     # Reading the video stream 
     ret, image = webcam.read() 
     if ret: 
-        image = imutils.resize(image, width=min(800, image.shape[1])) 
+        image = imutils.resize(image, width=min(1200, image.shape[1])) 
         image = detect(image)
         
-        if cv2.waitKey(25) & 0xFF == ord('q'): 
+        if cv2.waitKey(1) & 0xFF == ord('q'): 
             break
     else: 
         break
   
 webcam.release() 
 cv2.destroyAllWindows() 
-
-
-
