@@ -1,0 +1,56 @@
+﻿@page "/covidshops"
+@inject HttpClient http
+
+
+
+
+@if (covidliste == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Butiksnavn</th>
+                <th>antal</th>
+                <th>antal max</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var covidshop in covidliste)
+            {
+                <tr>
+                    <td>@covidshop.Id</td>
+                    <td>@covidshop.ButiksNavn</td>
+                    <td>@covidshop.Antal</td>
+                    <td>@covidshop.AntalMax</td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    public List<CovidCounterModel> covidliste = new List<CovidCounterModel>() {
+    new CovidCounterModel (1, 30, 60,"Superbrugsen"),
+    new CovidCounterModel (2, 5, 15,"Fanatikeren"),
+    new CovidCounterModel (3, 5, 10,"guldbageren"),
+    new CovidCounterModel (4, 5, 7,"e-Zigs"),
+    new CovidCounterModel (5, 100, 100,"Roskilde st"),
+    };
+
+    //public List<CovidCounterModel> covidliste;
+
+    //protected override async Task OnInitializedAsync()
+    //{
+    //    covidliste = await http.GetFromJsonAsync<List<CovidCounterModel>>("http://localhost:5001/api/CovidCounter");
+    //}
+}
